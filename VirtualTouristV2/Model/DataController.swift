@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-//Mooskine
 class DataController {
     
     let persistentContainer:NSPersistentContainer

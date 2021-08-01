@@ -29,7 +29,6 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
     /// The pin whose photos are being displayed
     var pin: Pin!
     
-    // like Mooskine
     fileprivate func setupFetchedResultsController() {
         let fetchRequest:NSFetchRequest<Photo> = Photo.fetchRequest()
         
@@ -48,7 +47,6 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
         }
     }
     
-    // Layout like MemeMe
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -69,7 +67,6 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
         drawMap()
     }
     
-    // like OnTheMap
     func drawMap() {
         var location = CLLocationCoordinate2D()
         location.longitude = pin.longitude
@@ -84,7 +81,6 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
         photoMapView.addAnnotations(annotations)
     }
     
-    // like OnTheMap
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
          
          let reuseId = "pin"

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-// like OnTheMap
 struct VTResponse: Codable {
     let statusCode: Int
     let statusMessage: String

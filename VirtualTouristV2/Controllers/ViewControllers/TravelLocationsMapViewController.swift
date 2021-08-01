@@ -23,7 +23,6 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
     
     var pins: [Pin]?
     
-    // like Mooskine
     fileprivate func setupFetchedResultsController() {
         let fetchRequest:NSFetchRequest<Pin> = Pin.fetchRequest()
         
@@ -56,7 +55,6 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
         addAnnotation(location: locationOnMap)
     }
     
-    // like addNote Mooskine
     func addAnnotation(location: CLLocationCoordinate2D){
         addAnnotationToMapView(location)
         
@@ -76,14 +74,12 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
         }
     }
     
-    // like OnTheMap
     fileprivate func addAnnotationToMapView(_ coordinate: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         self.mapView.addAnnotation(annotation)
     }
     
-    // like OnTheMap
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let reuseId = "pin"
