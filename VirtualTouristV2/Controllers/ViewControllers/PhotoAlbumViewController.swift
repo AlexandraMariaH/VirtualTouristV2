@@ -81,6 +81,8 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
         annotations.append(annotation)
         
         photoMapView.addAnnotations(annotations)
+        
+        showRegionOfPin()
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -97,6 +99,14 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
          }
          return pinView
      }
+    
+    func showRegionOfPin() {
+        
+        let center = CLLocationCoordinate2D.init(latitude: pin.latitude, longitude: pin.longitude)
+        let region = MKCoordinateRegion.init(center: center, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        
+        photoMapView.setRegion(region, animated: true)
+    }
     
     func downloadPictures(page: Int, completion: @escaping () -> Void) {
         
