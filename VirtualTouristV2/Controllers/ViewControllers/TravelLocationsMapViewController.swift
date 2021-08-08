@@ -50,9 +50,11 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
     }
     
     @objc func longTap(gestureRecognizer: UIGestureRecognizer){
-        let locationInView = gestureRecognizer.location(in: mapView)
-        let locationOnMap = mapView.convert(locationInView, toCoordinateFrom: mapView)
-        addAnnotation(location: locationOnMap)
+        if gestureRecognizer.state == UIGestureRecognizer.State.began {
+            let locationInView = gestureRecognizer.location(in: mapView)
+            let locationOnMap = mapView.convert(locationInView, toCoordinateFrom: mapView)
+            addAnnotation(location: locationOnMap)
+        }
     }
     
     func addAnnotation(location: CLLocationCoordinate2D){

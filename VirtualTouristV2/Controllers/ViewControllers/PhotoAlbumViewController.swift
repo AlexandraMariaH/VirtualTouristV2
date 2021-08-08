@@ -59,9 +59,11 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
         photoFlowLayout.minimumLineSpacing = space
         photoFlowLayout.itemSize = CGSize(width: dimension, height: dimension)
         
-        downloadPictures(page: 1, completion: {
-            self.collectionView.reloadData()
-        })
+        if pin.photos?.count == 0 {
+            downloadPictures(page: 1, completion: {
+                self.collectionView.reloadData()
+            })
+        }
                 
         setupFetchedResultsController()
         drawMap()
