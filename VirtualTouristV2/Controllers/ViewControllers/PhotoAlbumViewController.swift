@@ -111,7 +111,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
     func downloadPictures(page: Int, completion: @escaping () -> Void) {
         
         DispatchQueue.main.async {
-            VTClient.downloadPhotos(latitude: self.pin.latitude, longitude: self.pin.longitude, perPage: 15, page: page) { data,error in
+            VTClient.downloadPhotos(latitude: self.pin.latitude, longitude: self.pin.longitude, perPage: 12, page: page) { data,error in
                 
                 if data?.total == 0 {
                     self.showAlert(message: "")
@@ -151,7 +151,9 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
             }
         }
         
-        downloadPictures(page: 2, completion: {})
+        let newPage = Int.random(in: 1...10)
+        
+        downloadPictures(page: newPage, completion: {})
         newCollectionButton.isEnabled = true
     }
 
