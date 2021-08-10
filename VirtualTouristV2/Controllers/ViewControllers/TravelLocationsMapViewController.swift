@@ -110,7 +110,7 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
         do {
             pins = try dataController.viewContext.fetch(Pin.fetchRequest())
         } catch {
-            print("fetching pin was not successfull")
+            debugPrint("fetching pin was not successfull")
         }
     }
     

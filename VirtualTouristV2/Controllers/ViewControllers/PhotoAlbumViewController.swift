@@ -20,6 +20,8 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
     @IBOutlet weak var photoFlowLayout: UICollectionViewFlowLayout!
     /// A button that empties the photo album and fetches a new set of images
     @IBOutlet weak var newCollectionButton: UIBarButtonItem!
+    /// A button that dismisses the photo album view
+    @IBOutlet weak var backButton: UIBarButtonItem!
     
     // MARK: Variables
     /// The data controller is responsible for establishing a connection with data
@@ -137,6 +139,10 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, NSFetchedRe
         let alertVC = UIAlertController(title: "No Images", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertVC, animated:true)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true) {}
     }
     
     // MARK: Load new collection of photos

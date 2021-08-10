@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Travel Locations Map View Controller" customClass="TravelLocationsMapViewController" customModule="VirtualTouristV2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uCR-Rb-Vgn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -91,7 +91,7 @@
                                     <navigationItem id="dql-aN-Xsw">
                                         <barButtonItem key="leftBarButtonItem" title="&lt; OK" id="a6O-zL-Lnh">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" id="7ZP-IW-diG"/>
+                                                <action selector="backButtonPressed:" destination="rm5-s5-BsK" id="byM-uz-Ro1"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -129,6 +129,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="a6O-zL-Lnh" id="ihO-Yo-A4S"/>
                         <outlet property="collectionView" destination="qyI-dY-qOe" id="fYs-qg-S1D"/>
                         <outlet property="newCollectionButton" destination="hnl-aM-66k" id="jD9-ra-Kd9"/>
                         <outlet property="photoFlowLayout" destination="P3D-Be-5GR" id="Gqv-67-62s"/>
